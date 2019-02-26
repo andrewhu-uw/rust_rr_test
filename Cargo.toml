@@ -1,0 +1,10 @@
+[package]
+name = "ffi-test"
+version = "0.1.0"
+authors = ["Andrew Hu <andrewhu@cs.washington.edu>"]
+
+[dependencies]
+
+[lib]
+name = "rust_rr_test"
+crate-type = ["staticlib"]

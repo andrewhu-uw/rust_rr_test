@@ -1,0 +1,34 @@
+use std::vec::Vec;
+
+#[repr(C)]
+struct StringListContainer {
+  mContainer : Vec<String>
+}
+
+impl StringListContainer {
+  fn new() -> StringListContainer {
+    StringListContainer { mContainer : Vec::new() } 
+  }
+
+  fn Add(&mut self, s : String) -> &mut StringListContainer {
+    self.mContainer.push(s);
+    self
+  }
+
+  fn Count(&self) -> usize {
+    self.mContainer.len()
+  }
+
+  fn print(&self) {
+    self.mContainer.iter().for_each(|x| println!("{}", x));
+  }
+}
+
+fn main() {
+  let mut slc = StringListContainer::new();
+  slc.Add("test".to_string());
+  slc.Add("hello".to_string());
+  slc.Add("world".to_string());
+  slc.print();
+  println!("{}", slc.Count());
+}
