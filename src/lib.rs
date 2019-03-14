@@ -36,7 +36,7 @@ impl StringListContainer {
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn StringListContainer_do(slc_p : *mut StringListContainer, m : SLCArgs) {
+pub unsafe extern "Rust" fn StringListContainer_do(slc_p : *mut StringListContainer, m : SLCArgs) {
   let slc = &mut *(slc_p);
   match m {
     SLCArgs::Count => println!("{}", slc.Count()),
