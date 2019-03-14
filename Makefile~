@@ -3,7 +3,7 @@ LDFLAGS := -ldl -lpthread
 OUTFILE := a.out
 
 all: cxx/main.o target/debug/librust_rr_test.a
-	g++ -o $(OUTFILE) cxx/main.o target/debug/librust_rr_test.a $(LDFLAGS)
+	g++ -o cxx/$(OUTFILE) cxx/main.o target/debug/librust_rr_test.a $(LDFLAGS)
 
 run: 
 	cxx/$(OUTFILE)
